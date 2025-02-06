@@ -1,11 +1,11 @@
 import logging
 import random
-from datetime import datetime  # Добавьте этот импорт
+from datetime import datetime
 from telegram import Update, ReplyKeyboardMarkup
 from telegram.ext import CallbackContext, CommandHandler, MessageHandler, filters
 from opisanie_kart import CARD
 from utils import check_subscription, is_admin, send_main_menu
-from database import write_user_to_db
+from db import write_user_to_db
 from asyncio import Lock
 
 data_lock = Lock()

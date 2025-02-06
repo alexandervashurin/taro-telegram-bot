@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 import os
 from telegram.ext import ApplicationBuilder
 from handlers import setup_handlers
-from database import create_table
+from db import create_table
 
 load_dotenv()
 
