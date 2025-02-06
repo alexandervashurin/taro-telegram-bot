@@ -4,7 +4,7 @@ from datetime import datetime
 from telegram import Update, ReplyKeyboardMarkup
 from telegram.ext import CallbackContext, CommandHandler, MessageHandler, filters
 from opisanie_kart import CARD
-from utils import check_subscription, is_admin, send_main_menu
+from utils import check_subscription, is_admin, send_main_menu, tz  # Импортируем tz
 from db import write_user_to_db
 from asyncio import Lock
 
@@ -60,7 +60,7 @@ async def handle_message(update: Update, context: CallbackContext):
 async def show_stats(update: Update, context: CallbackContext):
     user = update.effective_user
     if not await is_admin(user.id, context.bot):
-        await update.message.reply_text("Эта функция доступна только администраторам")
+        await update.message.reply_text("Эта функция доступна только администраторам канала")
         return
 
     async with data_lock:
