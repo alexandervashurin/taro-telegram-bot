@@ -1,5 +1,6 @@
 import logging
 import random
+from datetime import datetime  # Добавьте этот импорт
 from telegram import Update, ReplyKeyboardMarkup
 from telegram.ext import CallbackContext, CommandHandler, MessageHandler, filters
 from opisanie_kart import CARD
